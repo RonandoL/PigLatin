@@ -8,6 +8,15 @@ describe('pigLatin', function() {
     expect(pigLatin("bug")).to.equal("ugbay");
   });
 
+  it("takes two consonants at the beginning of a word and moves them to the end", function() {
+    expect(pigLatin("tricky")).to.equal("ickytray");
+  });
+});
+
+describe("vowelCheck", function() {
+  it("returns true if a word has a vowel in the specified location", function() {
+    expect(vowelCheck("picky, 1")).to.equal(true);
+  });
 });
 
 
