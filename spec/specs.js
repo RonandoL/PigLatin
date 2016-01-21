@@ -5,7 +5,7 @@ describe('pigLatin', function() {
   });
 
   it("will slice the first consanant and move to the end and add 'ay'", function() {
-    expect(pigLatin("bug")).to.equal("ugbay");
+    expect(pigLatin("cat")).to.equal("atcay");
   });
 
   it("takes two consonants at the beginning of a word and moves them to the end", function() {
@@ -13,9 +13,19 @@ describe('pigLatin', function() {
   });
 });
 
-describe("vowelCheck", function() {
-  it("returns true if a word has a vowel in the specified location", function() {
-    expect(vowelCheck("picky, 1")).to.equal(true);
+describe("hasConsonantAt", function() {
+  it("returns true if a word has a consonant in the specified location", function() {
+    expect(hasConsonantAt("peanut", 0)).to.equal(true);
+  });
+
+  it("returns false if a word does not have a consonant in the specified spot", function() {
+    expect(hasConsonantAt("peanut", 1)).to.equal(false);
+  });
+});
+
+describe("indexOfFirstVowel", function() {
+  it("returns 0 for a word that starts with a vowel ", function() {
+    expect(indexOfFirstVowel("apple")).to.equal(0);
   });
 });
 
